@@ -7,7 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install base dependencies
 RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
-    apt-utils gnutls-bin build-essential postgresql-client curl \
+    apt-utils gnutls-bin build-essential postgresql-client curl libpq-dev\
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
