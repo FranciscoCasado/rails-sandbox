@@ -25,6 +25,11 @@ RUN gem install bundler:2.4.3 --conservative
 # Set Working directory
 WORKDIR /src
 
+
+# Install yarn dependencies
+COPY ./package.json ./yarn.lock ./
+RUN yarn install --frozen-lockfile
+
 # Install ruby dependencies
 COPY ./Gemfile ./Gemfile.lock /src/
 COPY ./gems ./gems
