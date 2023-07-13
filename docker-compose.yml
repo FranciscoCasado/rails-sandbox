@@ -2,7 +2,7 @@ version: '3.9'
 
 x-app:
   &x-app
-  image: app
+  image: rails-local
   build:
     context: .
   env_file:
